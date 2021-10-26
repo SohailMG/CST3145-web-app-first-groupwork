@@ -20,7 +20,7 @@
         <p id="location">Location: {{subject.location }}</p>
         <p id="price">Price: {{subject.price }}</p>
         <p id="numberOfSpaces">Number of Spaces: {{subject.spaces }}</p>
-        <button id="addToCartButton" @click="sellItem" :disabled="isDisabled">Add To Cart</button>
+        <button id="addToCartButton" @click="sellItem" :disabled="subject.spaces == 0">Add To Cart</button>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
 
         methods: {
           sellItem() {
-            if (this.subject.spaces < 1){
+            if (this.subject.spaces === 0){
               this.isDisabled = true;
             }
               else {
