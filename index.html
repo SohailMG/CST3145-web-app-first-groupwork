@@ -18,9 +18,9 @@
       <div style="float: left">
         <h2 id="subject">{{subject.lesson}}</h2>
         <p id="location">Location: {{subject.location }}</p>
-        <p id="price">Price: {{subject.price }}</p>
+        <p id="price">Price: £{{subject.price }}</p>
         <p id="numberOfSpaces">Number of Spaces: {{subject.spaces }}</p>
-        <button id="addToCartButton" @click="sellItem" :disabled="subject.spaces == 0">Add To Cart</button>
+        <button id="addToCartButton" v-on:click="sellItem" :disabled="subject.spaces == 0">Add To Cart</button>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
             title: "After School Club",
             lesson: "Maths",
             location: "London",
-            price: 100,
+            price: 120,
             spaces: 5,
             image: "maths.png",
           }
